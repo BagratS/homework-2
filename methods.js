@@ -12,19 +12,23 @@ const splice = (arr, start, deleteCount , ...arg) => {
     let toAdd = [];
     let index = arr.length - start;
     while(index > 0) {
-        val = arr.pop();
+        const val = arr.pop();
         toAdd.push(val);
         index--;
     }
+    let toShow = []
+    
     while(deleteCount > 0) {
-        toAdd.pop();
+        toShow.push(toAdd.pop());
+        if(toAdd.length === 0) break;
         deleteCount--;
     }
+    console.log(toShow.reverse());
     arr.push(...arg, ...toAdd.reverse());
     return arr;
 }
 
-// console.log(splice([1,2,3,4], 3, 0,'Joe'));
+console.log(splice([1,2,3,4], 1, 4,'Joe'));
 
 
 const splice1 = (arr, start, deleteCount , ...arg) => {
@@ -168,7 +172,7 @@ function reduce(arr, cb, initialValue) {
 }
 
 const func = (prval, val) => prval + val;
-console.log(reduce([1, 2, 3, 4, 5], func));
-console.log(reduce([, ,], func, 2));
-console.log(reduce([, , ,]), func);
+// console.log(reduce([1, 2, 3, 4, 5], func));
+// console.log(reduce([, ,], func, 2));
+// console.log(reduce([, , ,]), func);
 
