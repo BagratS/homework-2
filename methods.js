@@ -24,7 +24,7 @@ const splice = (arr, start, deleteCount , ...arg) => {
     return arr;
 }
 
-// console.log(splice([1,2,3,4], 3, 0,'gago'));
+// console.log(splice([1,2,3,4], 3, 0,'Joe'));
 
 
 const splice1 = (arr, start, deleteCount , ...arg) => {
